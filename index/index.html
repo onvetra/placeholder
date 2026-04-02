@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONVETRA | Professional Veterinary Supplies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .btn-primary {
+            background-color: #0f172a;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #334155;
+            transform: translateY(-1px);
+        }
+        .view { display: none; }
+        .view.active { display: block; }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="showView('home')">
+                <div class="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-900 uppercase">ONVETRA</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase tracking-widest text-slate-600">
+                <a href="#" onclick="showView('home')" class="hover:text-slate-900 transition">Home</a>
+                <a href="#" onclick="showView('login')" class="hover:text-slate-900 transition">Pricelist</a>
+                <a href="#" onclick="showView('login')" class="hover:text-slate-900 transition">Equipment</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="showView('login')" class="text-sm font-semibold text-slate-900">Login</button>
+                <button onclick="showView('signup')" class="btn-primary px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider">Register Practice</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Sections -->
+    <main class="pt-20">
+        
+        <!-- HOME VIEW -->
+        <div id="home" class="view active">
+            <!-- Hero -->
+            <section class="hero-gradient min-h-[80vh] flex items-center">
+                <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 py-20">
+                    <div class="flex flex-col justify-center">
+                        <span class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-4">Established in Ontario, Canada</span>
+                        <h1 class="serif text-5xl md:text-7xl leading-tight mb-6">Elevating the Standard of Veterinary Care.</h1>
+                        <p class="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
+                            Exclusive distributor for clinical supplies, high-performance instrumentation, diagnostics, and clinical consumables. Tailored for all practices, big or small.
+                        </p>
+                        <div class="flex space-x-4">
+                            <button onclick="showView('login')" class="btn-primary px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest">Access Price List</button>
+                            <button onclick="showView('home')" class="border border-slate-300 px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white transition">Catalog 2026</button>
+                        </div>
+                    </div>
+                    <div class="hidden md:block relative">
+                        <div class="absolute inset-0 bg-slate-200 rounded-3xl overflow-hidden shadow-2xl">
+                            <!-- Placeholder for a high-end medical image -->
+                            <div class="w-full h-full flex items-center justify-center bg-slate-300 text-slate-400 italic">
+                                <img src="https://eastsideahclt.com/wp-content/uploads/2025/11/ESAHxNSCC-30-scaled.jpg" alt="Clinic Interior" class="object-cover w-full h-full opacity-80">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="grid md:grid-cols-3 gap-16">
+                        <div>
+                            <div class="text-slate-900 mb-4 font-bold text-lg">Next-Day Delivery</div>
+                            <p class="text-slate-500 text-sm leading-relaxed">Centrally located in Southern Ontario, we guarantee 48-hour turnaround for all regional clinical hubs.</p>
+                        </div>
+                        <div>
+                            <div class="text-slate-900 mb-4 font-bold text-lg">Clinical Excellence</div>
+                            <p class="text-slate-500 text-sm leading-relaxed">Every instrument is certified by ISO standards and vetted by our advisory board of Ontario DVMs.</p>
+                        </div>
+                        <div>
+                            <div class="text-slate-900 mb-4 font-bold text-lg">Practice Support</div>
+                            <p class="text-slate-500 text-sm leading-relaxed">Dedicated account support for large-scale clinic outfits and surgical centers across the province.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- LOGIN VIEW -->
+        <div id="login" class="view min-h-[90vh] flex items-center justify-center bg-slate-50 px-6">
+            <div class="max-w-md w-full bg-white p-10 rounded-2xl shadow-xl border border-slate-100">
+                <div class="text-center mb-8">
+                    <h2 class="serif text-3xl mb-2">Professional Login</h2>
+                    <p class="text-slate-400 text-sm">Access to our wholesale pricelist is restricted to verified veterinary professionals.</p>
+                </div>
+                <form onsubmit="event.preventDefault();" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Email Address</label>
+                        <input type="email" placeholder="dr.smith@clinic.ca" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Password</label>
+                        <input type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                    </div>
+                    <button class="w-full btn-primary py-4 rounded-lg font-bold uppercase tracking-widest text-sm shadow-lg">Sign In</button>
+                </form>
+                <div class="mt-8 text-center border-t border-slate-100 pt-6">
+                    <p class="text-sm text-slate-500">Not a partner yet? <a href="#" onclick="showView('signup')" class="text-slate-900 font-bold hover:underline">Apply for an account</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIGNUP VIEW -->
+        <div id="signup" class="view min-h-[90vh] py-20 bg-slate-50 px-6">
+            <div class="max-w-2xl mx-auto bg-white p-10 rounded-2xl shadow-xl border border-slate-100">
+                <div class="mb-10">
+                    <h2 class="serif text-3xl mb-2">Practice Registration</h2>
+                    <p class="text-slate-400 text-sm">Join Ontario's premier network. Verified CVO membership required.</p>
+                </div>
+                <form onsubmit="event.preventDefault();" class="grid md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Clinic Name</label>
+                        <input type="text" placeholder="Toronto North Veterinary Hospital" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">CVO License Number</label>
+                        <input type="text" placeholder="ON-XXXXX" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Primary Practice Type</label>
+                        <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition bg-white">
+                            <option>Small Animal</option>
+                            <option>Equine</option>
+                            <option>Specialty</option>
+                            <option>Emergency/Critical Care</option>
+							<option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Contact Name</label>
+                        <input type="text" placeholder="Dr. Jane Doe" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Clinic Phone</label>
+                        <input type="tel" placeholder="+1 (416) 000-0000" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="checkbox" class="mt-1 w-4 h-4 text-slate-900 border-slate-300 rounded focus:ring-slate-900">
+                            <span class="text-xs text-slate-500 leading-normal">I certify that I am a licensed veterinary professional in the province of Ontario and agree to the terms of wholesale procurement.</span>
+                        </label>
+                        <button class="w-full btn-primary py-4 rounded-lg font-bold uppercase tracking-widest text-sm">Submit Application</button>
+                    </div>
+                </form>
+                <div class="mt-8 text-center border-t border-slate-100 pt-6">
+                    <p class="text-sm text-slate-500">Already verified? <a href="#" onclick="showView('login')" class="text-slate-900 font-bold hover:underline">Log in here</a></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center text-slate-900 font-bold">O</div>
+                    <span class="font-bold tracking-tight uppercase">ONVETRA</span>
+                </div>
+                <p class="text-slate-400 max-w-sm text-sm leading-relaxed">
+                    Committed to the health of Canada's animal population through the reliable distribution of superior medical supplies.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase text-xs tracking-widest mb-6">Resources</h4>
+                <ul class="text-slate-400 text-sm space-y-4">
+                    <li><a href="#" onclick="showView('login')" class="hover:text-white">Price Guide</a></li>
+                    <li><a href="#" class="hover:text-white">Surgical Catalog</a></li>
+                    <li><a href="#" class="hover:text-white">SDS Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase text-xs tracking-widest mb-6">Contact</h4>
+                <ul class="text-slate-400 text-sm space-y-4">
+                    <li>Canadian Distribution Center</li>
+                    <li>service@onvetra.ca</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col md:row justify-between text-[10px] uppercase tracking-widest text-slate-500 font-bold">
+            <p>&copy; 2025 ONVETRA. All Rights Reserved.</p>
+            <div class="space-x-4 mt-4 md:mt-0">
+                <a href="#">Privacy</a>
+                <a href="#">Terms of Supply</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showView(viewId) {
+            // Hide all views
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+            });
+            // Show requested view
+            const target = document.getElementById(viewId);
+            if(target) {
+                target.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+</body>
+</html>
